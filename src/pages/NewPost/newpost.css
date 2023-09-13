@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 .modal1{
     width: 100vw;
     height: 100%;
@@ -22,6 +22,20 @@ overflow: hidden;
     height: 85%;
     position: absolute;
     overflow-y: scroll;
+    overflow-x: hidden;
+}
+.spin{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateX(50%);
+   
+}
+.suggestions{
+    margin: 5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 400;
 }
 
 .bfoot{

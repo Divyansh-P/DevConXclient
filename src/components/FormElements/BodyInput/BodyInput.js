@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import SimpleMDE from 'react-simplemde-editor';
-import 'easymde/dist/easymde.min.css';
+import MDEditor from '@uiw/react-md-editor';
 
 export const BodyInput = (props) => {
   const [value, setValue] = useState('');
@@ -22,6 +21,10 @@ export const BodyInput = (props) => {
     }
     props.onChange('body', value, valueRef.current.isValid);
   };
-
-  return <SimpleMDE value={value} onChange={onChange} />;
+  return ( <div className="container">
+  <MDEditor
+    value={value}
+    onChange={onChange}
+  />
+</div>)
 };

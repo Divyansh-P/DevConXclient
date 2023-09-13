@@ -1,5 +1,5 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 const SyntaxHighlight = {
   code({ node, inline, className, ...props }) {
@@ -7,7 +7,7 @@ const SyntaxHighlight = {
     const match = /language-(\w+)/.exec(className || '');
     return !inline && match ? (
       <SyntaxHighlighter
-        style={oneDark}
+        style={dracula}
         language={match[1]}
         PreTag='div'
         className='codeStyle'

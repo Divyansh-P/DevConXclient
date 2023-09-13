@@ -11,6 +11,8 @@ import {IoMdClose} from '@react-icons/all-files/io/IoMdClose'
 import './newpost.css'
 import axios from 'axios'
 
+import { ThreeDots } from  'react-loader-spinner'
+
 const NewPost = () => {
   const auth = useContext(AuthContext);
   const history = useHistory();
@@ -20,7 +22,6 @@ const NewPost = () => {
     useForm(newPostForm);
   const formValues = renderFormValues();
   const formInputs = renderFormInputs();
-
   const postSubmitHandle = async (evt) => {
     evt.preventDefault(); //otherwise, there will be a reload
     const formData = appendData(formValues);
@@ -89,6 +90,54 @@ axios.post(apiUrl, ip)
 });
   }
 
+  const tag_handler=()=>{
+    setm(true)
+    setshowb(!showb)
+    settyp('tagsuggest')
+    const apiUrl=`${process.env.REACT_APP_BASE_URL}/ai/tagsuggest`
+    axios.post(apiUrl, {msg:formValues.body})
+    .then((response) => {
+      const wordArray = response.data.split('\n');
+      setcontent(wordArray)
+      console.log('Server response:', wordArray);
+    })
+    .catch((error) => {
+      console.error('There was a problem with the POST request:', error);
+    });
+      }
+      const analyse_handler=()=>{
+        setm(true)
+        setshowb(!showb)
+        settyp('analyse')
+        const apiUrl=`${process.env.REACT_APP_BASE_URL}/ai/analyse`
+        axios.post(apiUrl,{msg:formValues.body})
+        .then((response) => {
+          const wordArray = response.data.split('\n')
+          setcontent(wordArray)
+          console.log('Server response:', wordArray);
+        })
+        .catch((error) => {
+          console.error('There was a problem with the POST request:', error);
+        });
+          }
+
+          const conclusion_handler=()=>{
+            setm(true)
+            setshowb(!showb)
+            settyp('conclusion')
+            const apiUrl=`${process.env.REACT_APP_BASE_URL}/ai/conclusion`
+            axios.post(apiUrl,{msg:formValues.body})
+            .then((response) => {
+              const wordArray = [response.data]
+              setcontent(wordArray)
+              console.log('Server response:', wordArray);
+            })
+            .catch((error) => {
+              console.error('There was a problem with the POST request:', error);
+            });
+              }
+
+
   const genmore=()=>{
     const apiUrl=`${process.env.REACT_APP_BASE_URL}/ai/${typ}`
     axios.post(apiUrl, ip)
@@ -107,6 +156,7 @@ axios.post(apiUrl, ip)
   const b_handler=()=>{
     setm(false)
     setcontent([])
+    setip('')
   }
   
   return (
@@ -144,6 +194,10 @@ axios.post(apiUrl, ip)
         <input type="text" id="fname" name="fname" onChange={topic}/>
         <div className='tit' onClick={tit_handler} >Title ideas</div>
         <div className='bi' onClick={idea_handler}>BrainStorm ideas</div>
+        {formValues.body&&
+           <div className='bi' onClick={tag_handler}>Suggest Tags</div>}
+           {formValues.body&& <div className='bi' onClick={analyse_handler}>Analyse my blog</div>}
+           {formValues.body&&<div className='bi' onClick={conclusion_handler}>Provide conclusion</div>}
         </div>
         </div>
       }
@@ -151,7 +205,16 @@ axios.post(apiUrl, ip)
         <div className='modal1'>
         <div className='tbox'>
         <div className='txt'>
-        {content.length<=0?<p>Loading.....</p>:content.map((x)=>{
+        {content.length<=0?<div  className='spin'><ThreeDots
+          height="80" 
+          width="80" 
+          radius="9"
+          color="#4fa94d" 
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClassName=""
+          visible={true}
+           /></div>:content.map((x)=>{
           return <p className='suggestions'>{x}</p>
         })}
         </div>
