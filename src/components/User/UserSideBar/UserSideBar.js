@@ -14,6 +14,8 @@ export const UserSideBar = ({ user }) => {
         <ul>
           <li>{user.posts && user.posts.length} posts published</li>
           <li>{user.comments && user.comments.length} comments written</li>
+          <li>{user.following && user.following.length} following</li>
+          <li>{user.followers && user.followers.length} followers</li>
           <li>{user.followedTags && user.followedTags.length} tags followed</li>
         </ul>
       </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import useHttpClient from './useHttpClient';
+//import useHttpClient from './useHttpClient';
 
 let logoutTimer;
 
@@ -8,7 +8,7 @@ const useAuth = () => {
   const [tokenExpirationDate, setTokenExpirationDate] = useState();
   const [userId, setUserId] = useState(null);
   const [user, setUser] = useState({});
-  const { sendReq } = useHttpClient();
+ // const { sendReq } = useHttpClient();
 
   //useCallback((uid, token, expirationDate)
   const login = useCallback((user, expirationDate) => {
@@ -20,6 +20,7 @@ const useAuth = () => {
 
     const tokenExpirationDate =
       expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
+      console.log(tokenExpirationDate)
     setTokenExpirationDate(tokenExpirationDate);
     localStorage.setItem(
       'userData',
@@ -43,18 +44,8 @@ const useAuth = () => {
     setTokenExpirationDate(null);
     localStorage.removeItem('userData');
     //GET request to backend for twitter since it uses passport
-    sendReq(
-      `${process.env.REACT_APP_BASE_URL}/users/auth/twitter/logout`,
-      'GET',
-      null,
-      {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Credentials': true,
-      },
-      'include'
-    );
-  }, [sendReq]);
+ 
+  }, []);
 
   useEffect(() => {
     if (token && tokenExpirationDate) {

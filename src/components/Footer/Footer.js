@@ -5,17 +5,12 @@ const Footer = () => {
   return (
     <footer>
       <p>
-        DEV.from is a clone of{' '}
-        <a href='https://dev.to/' className='hvr-underline'>
-          DEV.to
-        </a>{' '}
-        (A constructive and inclusive social network for software developers)
-      </p>
-      <p>
-        Made with love and{' '}
-        <a href='https://github.com/facebook/react' className='hvr-underline'>
+        Made with ❤️ and{' '}
+        <a href='https://github.com/facebook/react'  target='_blank' rel="noopener noreferrer" className='hvr-underline'>
           React
         </a>
+        {' by '}
+        <a href='https://github.com/Divyansh-P' target='_blank' rel="noopener noreferrer" className='hu_underline'>Divyansh</a>
         .
       </p>
     </footer>

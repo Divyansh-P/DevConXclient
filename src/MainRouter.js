@@ -13,6 +13,7 @@ import Tag from './pages/Tag/Tag';
 import Post from './pages/Post/Post';
 import SearchResults from './pages/SearchResults/SearchResults';
 import ReadingList from './pages/ReadingList/ReadingList';
+import Following from './components/Following/Following';
 import Footer from './components/Footer/Footer';
 import { AuthContext } from './context/auth';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -36,6 +37,9 @@ const MainRouter = ({ token }) => {
           </Route>
           <Route path='/users/:userId/readinglist' exact>
             <ReadingList />
+          </Route>
+          <Route path='/users/:userId/followinglist' exact>
+            <Following/>
           </Route>
           <Route path='/users/:userId/notifications' exact>
             <Notifications />

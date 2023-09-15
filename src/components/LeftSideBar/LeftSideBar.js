@@ -13,7 +13,7 @@ const LeftSideBar = () => {
   const auth = useContext(AuthContext);
   const { currentUser } = auth;
   const currentUserId = currentUser && currentUser.userId;
-
+  
   return (
     <>
       <div className='sidebar sidebar--left'>

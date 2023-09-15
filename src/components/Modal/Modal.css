@@ -14,6 +14,9 @@
   pointer-events: none;
   z-index: 1;
 }
+.logoi{
+  width: 7rem;
+}
 .modal.enter-done {
   opacity: 1;
   pointer-events: visible;

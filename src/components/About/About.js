@@ -12,8 +12,9 @@ const About = () => {
         <Link to='/' className='about__bold--co hvr-underline'>
           DevConx
         </Link>{' '}
-        is an online place where people share their thoughts, stay up-to-date with each other and grow in thier respective fields.
+        ,your ultimate destination for all things development, coding, and technology!
       </p>
+      <p>At DevConX, we are passionate about fostering a community of tech enthusiasts, developers, and learners. Whether you're a seasoned coder looking to stay up-to-date with the latest trends or a beginner taking your first steps into the world of programming, DevConX is here to guide and inspire you on your journey.</p>
       <ul className='about__links'>{!isLoggedIn && <GuestNavLinks />}</ul>
     </div>
   );

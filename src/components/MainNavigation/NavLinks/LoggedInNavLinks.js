@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Avatar from '../../Avatar/Avatar';
 import { Dropdown } from '../Dropdown';
 import { useHistory } from 'react-router-dom';
+import {BsPencilSquare} from '@react-icons/all-files/bs/BsPencilSquare'
 
 export const LoggedInNavLinks = ({
   unreadNotifications,
@@ -32,6 +33,7 @@ export const LoggedInNavLinks = ({
     <React.Fragment>
       <li className='list__item list__item--mobile item--create'>
         <NavLink className='create-link' to='/posts/new' exact>
+        <BsPencilSquare />
           Create Post
         </NavLink>
       </li>

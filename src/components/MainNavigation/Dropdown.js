@@ -36,6 +36,18 @@ export const Dropdown = ({ showMenu, currentUser, handleLogout }) => {
             className='btn dropdown__btn'
             onMouseDown={() =>
               handleRedirect(
+                `/users/${currentUser && currentUser.userId}/followinglist`
+              )
+            }
+          >
+            Your Followings
+          </button>
+        </li>
+        <li className='list__item hvr-bg-lt'>
+          <button
+            className='btn dropdown__btn'
+            onMouseDown={() =>
+              handleRedirect(
                 `/users/${currentUser && currentUser.userId}/readinglist`
               )
             }

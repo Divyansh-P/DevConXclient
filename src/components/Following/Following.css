@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Roboto:wght@100;400;500&display=swap');
+.following_box{
+  width: 100vw;
+  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.followingheader{
+ height: 20%;
+ font-weight: bold;
+ font-size: large;
+}
+.following{
+  height: 80%;
+}
+.following_list{
+  width: 500px;
+  height: 100px;
+ background-color: aqua;
+ margin: 20px;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ cursor: pointer;
+}
+.pfp{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.uname{
+  width: 200px;
+  font-size: medium;
+  font-family: 'Inclusive Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
