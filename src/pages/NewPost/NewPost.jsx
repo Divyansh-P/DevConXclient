@@ -8,6 +8,8 @@ import { appendData, renderRepeatedSkeletons } from '../../utils';
 import ErrorModal from '../../components/Modal/ErrorModal';
 import SkeletonElement from '../../components/Skeleton/SkeletonElement';
 import {IoMdClose} from '@react-icons/all-files/io/IoMdClose'
+import {AiFillCaretDown} from '@react-icons/all-files/ai/AiFillCaretDown'
+import {AiFillCaretUp} from '@react-icons/all-files/ai/AiFillCaretUp'
 import './newpost.css'
 import axios from 'axios'
 
@@ -54,6 +56,9 @@ const NewPost = () => {
   }
   //model open close
   const [m,setm]=useState(false)
+  //minimise
+  const [mn,setmn]=useState(false)
+
 
 //title button fn
   const tit_handler=()=>{
@@ -158,6 +163,17 @@ axios.post(apiUrl, ip)
     setcontent([])
     setip('')
   }
+
+  const mhandler=()=>{
+  setm(!m)
+  setmn(!mn)
+  }
+
+  const cclhandler=()=>{
+    setmn(!mn)
+    setcontent([])
+    setip('')
+  }
   
   return (
     <>
@@ -179,7 +195,7 @@ axios.post(apiUrl, ip)
             </button>
           </form>
         </div>
-        {showb&&<div className='ai-box' onClick={assist}>
+        {showb&&!mn&&<div className='ai-box' onClick={assist}>
         <span></span>
         <span></span>
         <span></span>
@@ -218,6 +234,7 @@ axios.post(apiUrl, ip)
           return <p className='suggestions'>{x}</p>
         })}
         </div>
+        <div className='mheader' onClick={mhandler}><AiFillCaretDown/> </div>
         <div className='bfoot'>
         <div className='more' onClick={()=>{setcontent([]);genmore()}}>
         Generate more
@@ -228,8 +245,8 @@ axios.post(apiUrl, ip)
         </div>
         </div>
         </div>
-        
       }
+      {!m&&mn&&<div className='drowp'><div className='upper' onClick={mhandler}><AiFillCaretUp/></div><div className='ccl' onClick={cclhandler}><IoMdClose/></div></div>}
       </div>
       
       )}

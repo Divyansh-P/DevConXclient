@@ -5,7 +5,7 @@
 
 .container-nav {
   display: flex;
-  max-width: 128rem;
+  max-width: 145rem;
   padding-top: 0.5rem;
 }
 
@@ -144,6 +144,11 @@ NAV
   margin-left: 2rem;
 }
 
+.picons{
+  margin-left:10px ;
+} 
+
+
 .search-icon {
   cursor: pointer;
 }
@@ -164,7 +169,7 @@ NAV
   }
 
   .search-bar {
-    width: 100%;
+    width: 50%;
   }
 
   .search-mobile-container {

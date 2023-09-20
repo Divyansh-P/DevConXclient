@@ -33,8 +33,8 @@ export const LoggedInNavLinks = ({
     <React.Fragment>
       <li className='list__item list__item--mobile item--create'>
         <NavLink className='create-link' to='/posts/new' exact>
-        <BsPencilSquare />
           Create Post
+          <BsPencilSquare className='picons' />
         </NavLink>
       </li>
       <li

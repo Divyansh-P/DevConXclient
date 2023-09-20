@@ -46,6 +46,29 @@ overflow: hidden;
     display: flex;
     justify-content: space-evenly;
 }
+.mheader{
+    cursor: pointer;
+    float: right;
+    height: 20px;
+    width: 40px;
+    margin: 20px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.drowp{
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    width: 200px;
+    height: 30px;
+    background-color: #1de9b6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 .more{
     min-width: 5rem;
     display: inline-block;
@@ -60,6 +83,13 @@ overflow: hidden;
     line-height: 1;
     font-size: 16px;
     height: 4rem;
+  
+}
+.upper{
+cursor: pointer;
+}
+.ccl{
+    cursor: pointer;
 }
 .back{
      min-width: 5rem;
