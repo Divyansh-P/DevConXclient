@@ -23,11 +23,13 @@ const NewPost = () => {
   const { renderFormInputs, renderFormValues, isFormValid } =
     useForm(newPostForm);
   const formValues = renderFormValues();
+  
   const formInputs = renderFormInputs();
   const postSubmitHandle = async (evt) => {
     evt.preventDefault(); //otherwise, there will be a reload
     const formData = appendData(formValues);
     formData.append('author', currentUser.userId);
+    
     try {
       await sendReq(
         `${process.env.REACT_APP_BASE_URL}/posts`,
@@ -102,7 +104,7 @@ axios.post(apiUrl, ip)
     const apiUrl=`${process.env.REACT_APP_BASE_URL}/ai/tagsuggest`
     axios.post(apiUrl, {msg:formValues.body})
     .then((response) => {
-      const wordArray = response.data.split('\n');
+      const wordArray = response.data.split(' ');
       setcontent(wordArray)
       console.log('Server response:', wordArray);
     })

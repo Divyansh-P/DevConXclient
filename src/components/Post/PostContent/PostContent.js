@@ -16,6 +16,9 @@ const PostContent = ({ post, handleDelete }) => {
   const createdAt = formatDate(date);
   const { currentUser } = useContext(AuthContext);
   const currentUserId = currentUser && currentUser.userId;
+  function Image(props) {
+    return <img {...props} style={{maxWidth: '100%'}} />
+  }
 
   return (
     <div className='post'>
@@ -33,7 +36,8 @@ const PostContent = ({ post, handleDelete }) => {
         <h1 className='post__heading'>{title}</h1>
         <PostTags tags={tags} />
         <div className='post__text'>
-          <ReactMarkdown components={SyntaxHighlight}>{body}</ReactMarkdown>
+          <ReactMarkdown
+           components={SyntaxHighlight}>{body}</ReactMarkdown>
         </div>
 
         <div className='post__auth'>

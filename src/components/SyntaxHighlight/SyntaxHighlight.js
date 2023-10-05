@@ -17,6 +17,7 @@ const SyntaxHighlight = {
       <code className={className} {...props} />
     );
   },
+  img:({node,...props})=><img style={{maxWidth:'100%'}}{...props}/>,
 };
 
 export default SyntaxHighlight;
