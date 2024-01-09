@@ -41,18 +41,7 @@ export const LoggedInNavLinks = ({
         className='list__item list__item--notifs hvr-bg-lt'
         onClick={handleClick}
       >
-        <NavLink
-          className='link'
-          to={`/users/${currentUser && currentUser.userId}/notifications`}
-          exact
-        >
-          <div className='link--notifs-icon'>
-            <RiNotificationLine size='2.5rem' />
-            {unreadNotifications && unreadNotifications.length > 0 && (
-              <div className='notif__counter'>{unreadNotifications.length}</div>
-            )}
-          </div>
-        </NavLink>
+       
       </li>
 
       <li>

@@ -1,5 +1,5 @@
 .container-posts {
-  width: 50%;
+  width: 60%;
 }
 
 .container-posts > ul {
@@ -7,6 +7,8 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+
 
 /*================
 POST PREVIEW
@@ -144,6 +146,8 @@ POST PREVIEW
   .preview__reactions > * {
     width: 45%;
   }
+
+
 
   .reactions__text {
     display: inline-block;

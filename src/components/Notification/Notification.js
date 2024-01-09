@@ -3,6 +3,9 @@ import Avatar from '../Avatar/Avatar';
 import NotificationBody from './NotificationBody';
 
 const Notification = ({ notification, type, children }) => {
+  if(!notification){
+    return null
+  }
   return (
     <div className='notif'>
       <Avatar
