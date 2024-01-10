@@ -42,7 +42,7 @@
 Set up the following environment variables in .env file <br>
 ```js
 REACT_APP_BASE_URL=https://localhost:5000/api
-REACT_APP_SOCKET_IO_URL=[https://fair-blue-walkingstick-fez.cyclic.app](https://localhost:5000/)
+REACT_APP_SOCKET_IO_URL=https://localhost:5000/
 ```
 
 Finally, run <code>npm start</code>
