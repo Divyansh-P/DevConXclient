@@ -13,8 +13,6 @@
 
 ## [Live Site](https://devconx.netlify.app/)
 
-## [Backend API](https://fair-blue-walkingstick-fez.cyclic.app/api)
-
 ## Backend Code available at : https://github.com/Divyansh-P/Devconxserver 
 
 ## Features
@@ -35,36 +33,23 @@
 - Search Posts
 - Skeleton Loading
 
-## How to setup locally
-
-### Clone
-
-Clone the repo to your local machine using `https://github.com/Divyansh-P/DevConXclient`
-
-### Setup
-
-Install npm dependencies
-
-```shell
-npm install
-
-```
 
 # How to setup locally
 
 * Clone repo to your local machine `git clone https://github.com/Divyansh-P/DevConXclient.git`
 * Install dependencies ```npm i```
+* Set up the backend server from https://github.com/Divyansh-P/Devconxserver 
 Set up the following environment variables in .env file <br>
 ```js
-REACT_APP_BASE_URL=https://fair-blue-walkingstick-fez.cyclic.app/api
-REACT_APP_SOCKET_IO_URL=https://fair-blue-walkingstick-fez.cyclic.app
+REACT_APP_BASE_URL=https://localhost:5000/api
+REACT_APP_SOCKET_IO_URL=[https://fair-blue-walkingstick-fez.cyclic.app](https://localhost:5000/)
 ```
 
 Finally, run <code>npm start</code>
 
 ```shell
-$ cd server && npm start
-$ cd client && npm start
+$ npm start
+
 ```
 ## Screenshots
 
